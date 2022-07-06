@@ -32,6 +32,15 @@ exports.get = async(req,res)=>{
         return res.send(results);
     }
 }
+exports.getById = async (req,res)=>{
+    const results = await repo.getById(req.params.id);
+    if (results == -1 ){
+        return res.send("Failed to get records");
+    }else{
+        return res.send(results);
+    }
+}
+
 
 
 exports.getByLocation = async(req,res)=>{
