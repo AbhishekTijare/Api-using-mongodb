@@ -11,5 +11,6 @@ router.get("/location/:city", controller.getByLocation);
 router.put("/",controller.update);
 router.delete("/:id",controller.delete);
 router.get("/filter",controller.filter);
+router.get("/:id",controller.getById);
 
 module.exports = router;
