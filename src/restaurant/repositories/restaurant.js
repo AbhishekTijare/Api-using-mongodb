@@ -48,6 +48,18 @@ exports.getByLocation = async (_location)=>{
         return -1;
     }
 }
+exports.getById = async(id)=>{
+    const collection = mongoDBConfig.getCollection("Restaurant");
+    try{
+        const filterExpression= {_id:ObjectId(id)}; 
+        const results = await collection.find(filterExpression).toArray();
+        return results;
+        }catch (err){
+            console.log(err);
+            return -1;
+        
+       }
+}
 
  exports.delete = async(id)=>{
     const collection = mongoDBConfig.getCollection("Restaurant");
